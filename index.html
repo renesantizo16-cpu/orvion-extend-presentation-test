@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Orvion Display">
+  <meta name="theme-color" content="#080d17">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Orvion Extend · Presentation test</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main id="stage" aria-label="Simulated extended display">
+    <section id="desktop" aria-label="16 by 9 simulated Mac desktop">
+      <div class="menu-bar"><strong>◈ Orvion</strong><span>Finder &nbsp; File &nbsp; Edit &nbsp; View</span><span class="menu-right">PRESENTATION ONLY</span></div>
+      <div class="corner tl">01 · TOP LEFT</div><div class="corner tr">02 · TOP RIGHT</div>
+      <div class="corner bl">03 · BOTTOM LEFT</div><div class="corner br">04 · BOTTOM RIGHT</div>
+      <article class="window">
+        <div class="title-bar"><span class="traffic">● ● ●</span><span>Orvion Extend</span><span>PHASE 6B</span></div>
+        <div class="window-body"><p class="eyebrow">YOUR SECOND SPACE</p><h1>A desktop.<br>A little more room.</h1><p>This is a local presentation simulation.<br>No Mac capture or streaming is connected.</p><div class="resolution">1280 × 720 <span>16:9 · ASPECT FIT</span></div></div>
+      </article>
+      <div class="dock" aria-hidden="true"><span>⌘</span><span>▤</span><span>◎</span><span>▧</span><span>⚙</span></div>
+    </section>
+    <div id="overlay" class="overlay">
+      <section class="controls" aria-label="Presentation controls">
+        <div class="control-heading"><strong>ORVION <span>EXTEND</span></strong><span class="badge">PRESENTATION TEST</span></div>
+        <p>Check every corner. Tap the desktop to reveal controls.</p>
+        <div class="buttons"><button id="connect" type="button">Connect</button><button id="exit" type="button">Exit presentation</button><button id="details" type="button" aria-expanded="false" aria-controls="diagnostics">Diagnostics</button></div>
+        <p id="status" role="status" aria-live="polite">Ready. Connect requests fullscreen; it does not connect to a Mac.</p>
+        <pre id="diagnostics" hidden aria-label="Presentation diagnostics"></pre>
+      </section>
+    </div>
+    <button id="reveal" class="reveal" type="button" aria-label="Reveal presentation controls">•••</button>
+  </main>
+</body>
+</html>

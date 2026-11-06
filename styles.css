@@ -1,0 +1,35 @@
+:root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #000; color: #edf4ff; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid #8df4d3; outline-offset: 4px; }
+[hidden] { display: none !important; }
+#stage { position: fixed; inset: 0; width: 100%; height: 100vh; height: 100dvh; background: #000; display: grid; place-items: center; overflow: hidden; }
+#stage:fullscreen { width: 100%; height: 100%; }
+#desktop { position: relative; width: min(100vw, calc(100vh * 16 / 9)); width: min(100vw, calc(100dvh * 16 / 9)); aspect-ratio: 16 / 9; flex: none; overflow: hidden; border: 3px solid #8df4d3; container-type: inline-size; background: radial-gradient(ellipse at 80% 80%, #346d79 0, transparent 55%), radial-gradient(ellipse at 15% 110%, #397c9b 0, transparent 65%), linear-gradient(135deg, #0b142b, #233c67 65%, #13263c); }
+.menu-bar { height: 6%; display: flex; align-items: center; gap: 2%; padding: 0 2%; background: #0a152777; font-size: clamp(7px, 1.1vw, 16px); font-size: 1.3cqw; }
+.menu-right { margin-left: auto; font-size: .85em; letter-spacing: .15em; }
+.corner { position: absolute; z-index: 2; padding: .8% 1%; background: #071421df; border: 1px solid #8df4d3; color: #aaffdf; font: 600 clamp(6px, 1vw, 15px) ui-monospace, monospace; font-size: 1.2cqw; }
+.tl { top: 7%; left: .7%; } .tr { top: 7%; right: .7%; } .bl { bottom: .7%; left: .7%; } .br { bottom: .7%; right: .7%; }
+.window { position: absolute; left: 17%; top: 19%; width: 66%; height: 61%; border: 1px solid #ffffff3b; border-radius: 1.3cqw; overflow: hidden; box-shadow: 0 2cqw 6cqw #0006; background: #0c1629e8; }
+.title-bar { height: 12%; display: flex; align-items: center; justify-content: space-between; padding: 0 3%; background: #ffffff08; font-size: 1.1cqw; color: #c1cde1; }
+.traffic { color: #efb289; letter-spacing: .4cqw; } .window-body { padding: 4% 7%; }
+.eyebrow { font-size: 1cqw; letter-spacing: .24em; color: #8df4d3; }
+h1 { font-weight: 500; font-size: 4.5cqw; line-height: 1.05; letter-spacing: -.045em; margin: 3% 0; }
+.window-body > p:not(.eyebrow) { color: #a8b9d0; font-size: 1.35cqw; line-height: 1.5; }
+.resolution { display: flex; gap: 3%; align-items: center; font: 1.3cqw ui-monospace, monospace; margin-top: 4%; color: #d3ece8; } .resolution span { font-size: .8cqw; color: #849fb0; }
+.dock { position: absolute; bottom: 3%; left: 35%; width: 30%; height: 9%; border: 1px solid #ffffff3b; border-radius: 1.2cqw; background: #d9edff18; display: flex; justify-content: space-evenly; align-items: center; backdrop-filter: blur(12px); }
+.dock span { font-size: 2.8cqw; }
+.overlay { position: absolute; z-index: 4; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(30px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); pointer-events: none; transition: opacity .25s; }
+.overlay.is-hidden { opacity: 0; visibility: hidden; }
+.controls { width: min(660px, 100%); max-height: 80dvh; overflow: auto; pointer-events: auto; padding: 20px; border: 1px solid #52657d; border-radius: 18px; background: #091321f5; box-shadow: 0 15px 70px #0009; }
+.control-heading { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; font-size: 14px; letter-spacing: .1em; } .control-heading strong span { font-weight: 400; color: #9fb3ca; }
+.badge { font-size: 10px; color: #8df4d3; align-self: center; }
+.controls p { font-size: 13px; line-height: 1.5; color: #b8c8dc; margin: 12px 0; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.buttons button { border: 1px solid #51617a; border-radius: 9px; background: #1b2b40; color: #eef5ff; padding: 11px 15px; min-height: 44px; font-size: 13px; }
+#connect { background: #a1f2d7; color: #08271e; border-color: transparent; font-weight: 600; }
+#diagnostics { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; line-height: 1.6; color: #9ff0d5; border-top: 1px solid #ffffff20; padding-top: 10px; }
+.reveal { position: absolute; z-index: 3; right: max(12px, env(safe-area-inset-right)); top: max(12px, env(safe-area-inset-top)); width: 44px; height: 44px; opacity: 0; border: 0; border-radius: 50%; color: #fff; background: #142437; }
+.reveal:focus-visible { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .overlay { transition: none; } }
